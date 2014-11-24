@@ -6,6 +6,12 @@
 </script>
 <div class='container-fluid' ng-controller="TypeaheadCtrl">
 
+	<h4>Resolved data</h4>
+	<input type="text" 
+		   ng-model="optionValue" 
+		   typeahead="opt for opt in options | filter:$viewValue"
+		   typeahead-custom-options="options">
+	
     <h4>Static arrays</h4>
     <pre>Model: {{selected | json}}</pre>
     <input type="text" ng-model="selected" typeahead="state for state in states | filter:$viewValue | limitTo:8" class="form-control">
